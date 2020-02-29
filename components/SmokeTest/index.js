@@ -9,7 +9,12 @@ const Title = styled.h1`
 
 export default function index() {
   // Use the custom hook
-  const { teste } = usePokemonData();
+  const { teste, pokemons } = usePokemonData();
 
-  return <Title>{teste ? teste : "carregando"}</Title>;
+  return (
+    <div>
+      <Title>{teste ? teste : "carregando"}</Title>
+      {JSON.stringify(pokemons)}
+    </div>
+  );
 }
